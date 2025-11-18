@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Meta Tags Essenciais -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Meta Tags SEO -->
+    <meta name="description" content="Conheça os projetos sociais das ONGs cadastradas no MyONG. Encontre causas que fazem a diferença e participe como voluntário ou doador.">
+    <meta name="keywords" content="projetos sociais, ONGs, voluntariado, causas sociais, terceiro setor">
+    <meta name="author" content="MyONG">
+    <meta name="robots" content="index, follow">
+    
+    <title>Projetos Sociais - MyONG</title>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="./css/variables.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./images/logo.png">
+</head>
+<body>
+    <!-- Header - Cabeçalho Principal -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="./images/logo.png" alt="Logo MyONG">
+                        <span class="logo-text">MyONG</span>
+                    </a>
+                </div>
+                
+                <!-- Navigation - Menu Principal -->
+                <nav class="nav" role="navigation" aria-label="Menu principal">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="index.html" class="nav-link">Início</a></li>
+                        <li class="nav-item"><a href="projetos.html" class="nav-link active">Projetos</a></li>
+                        <li class="nav-item"><a href="index.html#sobre" class="nav-link">Sobre</a></li>
+                        <li class="nav-item"><a href="index.html#contato" class="nav-link">Contato</a></li>
+                    </ul>
+                    <a href="cadastro.html" class="btn btn-primary">Cadastre-se</a>
+                </nav>
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content - Conteúdo Principal -->
+    <main class="main">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">Projetos Sociais</h1>
+                <p class="page-subtitle">Descubra projetos que estão transformando vidas e fazendo a diferença</p>
+            </div>
+        </section>
+
+        <!-- Filters Section - Filtros de Busca -->
+        <section class="filters" aria-label="Filtros de busca">
+            <div class="container">
+                <div class="filter-bar">
+                    <div class="filter-group">
+                        <label for="search" class="filter-label">Buscar:</label>
+                        <input type="search" id="search" class="filter-input" placeholder="Nome do projeto ou ONG">
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="category" class="filter-label">Categoria:</label>
+                        <select id="category" class="filter-select">
+                            <option value="">Todas as categorias</option>
+                            <option value="educacao">Educação</option>
+                            <option value="saude">Saúde</option>
+                            <option value="meio-ambiente">Meio Ambiente</option>
+                            <option value="direitos-humanos">Direitos Humanos</option>
+                            <option value="cultura">Cultura</option>
+                            <option value="animais">Proteção Animal</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="location" class="filter-label">Localização:</label>
+                        <select id="location" class="filter-select">
+                            <option value="">Todas as localizações</option>
+                            <option value="sp">São Paulo</option>
+                            <option value="rj">Rio de Janeiro</option>
+                            <option value="mg">Minas Gerais</option>
+                            <option value="rs">Rio Grande do Sul</option>
+                            <option value="ba">Bahia</option>
+                        </select>
+                    </div>
+                    
+                    <button type="button" class="btn btn-primary" id="filterBtn">Filtrar</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section - Lista de Projetos -->
+        <section class="projects" aria-label="Lista de projetos">
+            <div class="container">
+                <div class="projects-grid" id="projectsGrid">
+                    <!-- Project Card 1 -->
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="./images/project-1.jpg" alt="Projeto Educação para Todos">
+                            <span class="project-badge">Educação</span>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Educação para Todos</h3>
+                            <p class="project-ong">ONG Educar é Transformar</p>
+                            <p class="project-location">São Paulo, SP</p>
+                            <p class="project-description">Programa de reforço escolar e alfabetização para crianças em situação de vulnerabilidade social.</p>
+                            
+                            <div class="project-progress">
+                                <div class="progress-info">
+                                    <span>Meta: R$ 50.000</span>
+                                    <span>75% atingido</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="project-actions">
+                                <button class="btn btn-primary">Doar</button>
+                                <button class="btn btn-secondary">Ser Voluntário</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project Card 2 -->
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="./images/project-2.jpg" alt="Reflorestamento Urbano">
+                            <span class="project-badge">Meio Ambiente</span>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Reflorestamento Urbano</h3>
+                            <p class="project-ong">Instituto Verde Vida</p>
+                            <p class="project-location">Rio de Janeiro, RJ</p>
+                            <p class="project-description">Plantio de árvores nativas em áreas urbanas degradadas para recuperação ambiental.</p>
+                            
+                            <div class="project-progress">
+                                <div class="progress-info">
+                                    <span>Meta: R$ 30.000</span>
+                                    <span>45% atingido</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 45%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="project-actions">
+                                <button class="btn btn-primary">Doar</button>
+                                <button class="btn btn-secondary">Ser Voluntário</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project Card 3 -->
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="./images/project-3.jpg" alt="Saúde na Comunidade">
+                            <span class="project-badge">Saúde</span>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Saúde na Comunidade</h3>
+                            <p class="project-ong">Associação Vida Saudável</p>
+                            <p class="project-location">Belo Horizonte, MG</p>
+                            <p class="project-description">Atendimento médico e odontológico gratuito para comunidades carentes.</p>
+                            
+                            <div class="project-progress">
+                                <div class="progress-info">
+                                    <span>Meta: R$ 80.000</span>
+                                    <span>60% atingido</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 60%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="project-actions">
+                                <button class="btn btn-primary">Doar</button>
+                                <button class="btn btn-secondary">Ser Voluntário</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project Card 4 -->
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="./images/project-4.jpg" alt="Resgate Animal">
+                            <span class="project-badge">Proteção Animal</span>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Resgate Animal</h3>
+                            <p class="project-ong">ONG Patinhas Solidárias</p>
+                            <p class="project-location">Porto Alegre, RS</p>
+                            <p class="project-description">Resgate, tratamento e adoção responsável de animais em situação de abandono.</p>
+                            
+                            <div class="project-progress">
+                                <div class="progress-info">
+                                    <span>Meta: R$ 25.000</span>
+                                    <span>90% atingido</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="project-actions">
+                                <button class="btn btn-primary">Doar</button>
+                                <button class="btn btn-secondary">Ser Voluntário</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project Card 5 -->
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="./images/project-5.jpg" alt="Arte e Cultura para Jovens">
+                            <span class="project-badge">Cultura</span>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Arte e Cultura para Jovens</h3>
+                            <p class="project-ong">Centro Cultural Esperança</p>
+                            <p class="project-location">Salvador, BA</p>
+                            <p class="project-description">Oficinas de música, teatro e artes plásticas para jovens da periferia.</p>
+                            
+                            <div class="project-progress">
+                                <div class="progress-info">
+                                    <span>Meta: R$ 40.000</span>
+                                    <span>35% atingido</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 35%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="project-actions">
+                                <button class="btn btn-primary">Doar</button>
+                                <button class="btn btn-secondary">Ser Voluntário</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project Card 6 -->
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="./images/project-6.jpg" alt="Direitos das Mulheres">
+                            <span class="project-badge">Direitos Humanos</span>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Direitos das Mulheres</h3>
+                            <p class="project-ong">Instituto Mulheres em Ação</p>
+                            <p class="project-location">São Paulo, SP</p>
+                            <p class="project-description">Apoio jurídico e psicológico para mulheres vítimas de violência doméstica.</p>
+                            
+                            <div class="project-progress">
+                                <div class="progress-info">
+                                    <span>Meta: R$ 60.000</span>
+                                    <span>55% atingido</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 55%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="project-actions">
+                                <button class="btn btn-primary">Doar</button>
+                                <button class="btn btn-secondary">Ser Voluntário</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    <button class="pagination-btn" disabled>Anterior</button>
+                    <span class="pagination-info">Página 1 de 3</span>
+                    <button class="pagination-btn">Próxima</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta">
+            <div class="container">
+                <h2 class="cta-title">Sua ONG também pode estar aqui!</h2>
+                <p class="cta-text">Cadastre sua organização e alcance milhares de potenciais voluntários e doadores</p>
+                <a href="cadastro.html" class="btn btn-primary btn-large">Cadastrar ONG</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer - Rodapé -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Footer Column 1 - About -->
+                <div class="footer-column">
+                    <h3 class="footer-title">Sobre o MyONG</h3>
+                    <p class="footer-text">Plataforma que conecta ONGs com pessoas dispostas a transformar o mundo através da solidariedade e ação social.</p>
+                </div>
+                
+                <!-- Footer Column 2 - Links -->
+                <div class="footer-column">
+                    <h3 class="footer-title">Links Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="projetos.html">Projetos</a></li>
+                        <li><a href="cadastro.html">Cadastre-se</a></li>
+                        <li><a href="index.html#sobre">Sobre</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Footer Column 3 - Contact -->
+                <div class="footer-column">
+                    <h3 class="footer-title">Contato</h3>
+                    <ul class="footer-contact">
+                        <li>Email: contato@myong.org.br</li>
+                        <li>Telefone: (11) 1234-5678</li>
+                        <li>WhatsApp: (11) 98765-4321</li>
+                    </ul>
+                </div>
+                
+                <!-- Footer Column 4 - Social -->
+                <div class="footer-column">
+                    <h3 class="footer-title">Redes Sociais</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <img src="./images/icons/facebook.svg" alt="Facebook">
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <img src="./images/icons/instagram.svg" alt="Instagram">
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <img src="./images/icons/linkedin.svg" alt="LinkedIn">
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <img src="./images/icons/twitter.svg" alt="Twitter">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p>&copy; 2025 MyONG. Todos os direitos reservados.</p>
+                <div class="footer-legal">
+                    <a href="#">Política de Privacidade</a>
+                    <a href="#">Termos de Uso</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="./js/main.js"></script>
+</body>
+</html>
