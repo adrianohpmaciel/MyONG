@@ -168,6 +168,38 @@ Abordagem híbrida otimizada:
 - **100% offline** após primeiro carregamento
 - **Mobile-first** com 4 breakpoints responsivos
 
+## 🤖 Metodologia de Desenvolvimento
+
+Este projeto foi desenvolvido utilizando **ferramentas de IA como assistente de desenvolvimento**, seguindo as melhores práticas da engenharia de software moderna. A abordagem combinou:
+
+### Aprendizado Ativo
+- Estudo dos conceitos de HTML5, CSS3 e JavaScript através de documentação oficial
+- Compreensão profunda dos requisitos do projeto e das necessidades do terceiro setor
+- Análise crítica de cada componente implementado
+
+### Desenvolvimento Assistido
+- Utilização de IA para **acelerar a implementação** de componentes repetitivos
+- Auxílio na **estruturação do código** seguindo padrões semânticos e de acessibilidade
+- Suporte na **documentação técnica** e comentários explicativos
+
+### Validação e Refinamento
+- **Revisão manual** de todo código gerado
+- **Testes funcionais** em múltiplos navegadores e dispositivos
+- **Ajustes personalizados** para atender requisitos específicos do projeto
+- **Compreensão total** da arquitetura e funcionamento de cada funcionalidade
+
+### Competências Desenvolvidas
+Mesmo com auxílio de IA, o projeto demonstra domínio de:
+- ✅ Estruturação semântica HTML5
+- ✅ Estilização avançada com CSS3
+- ✅ Lógica de programação JavaScript
+- ✅ Design responsivo e acessível
+- ✅ Validação de formulários complexos
+- ✅ Integração com APIs externas (ViaCEP)
+- ✅ Versionamento de código (Git/GitHub)
+
+> **Transparência Acadêmica:** O uso de ferramentas de IA no desenvolvimento de software é uma prática profissional moderna e aceita na indústria. Este projeto reflete a capacidade de utilizar tecnologias contemporâneas de forma ética e produtiva, mantendo a responsabilidade e compreensão integral do código produzido.
+
 ## 📝 Licença
 
 Este é um projeto educacional desenvolvido para fins acadêmicos e de aprendizado.
