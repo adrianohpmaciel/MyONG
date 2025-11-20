@@ -338,11 +338,22 @@
         console.log('Form submitted successfully!');
         console.log('Form data:', Object.fromEntries(formData));
         
-        // Show success message
-        alert('Cadastro realizado com sucesso! Em produção, os dados seriam enviados ao servidor.');
+        // Remove draft on successful submission
+        if (window.MyONGStorage && this.id) {
+          window.MyONGStorage.FormDraft.removeDraft(this.id);
+        }
         
-        // Reset form (optional)
-        // this.reset();
+        // Show success message
+        if (window.showToast) {
+          window.showToast('Sucesso!', 'Cadastro realizado com sucesso!', 'success');
+        } else {
+          alert('Cadastro realizado com sucesso! Em produção, os dados seriam enviados ao servidor.');
+        }
+        
+        // Reset form
+        setTimeout(() => {
+          this.reset();
+        }, 1000);
       } else {
         // Focus first invalid field
         const firstInvalid = this.querySelector('.invalid');
@@ -359,6 +370,27 @@
   
   forms.forEach(form => {
     setupFormValidation(form);
+    
+    // Configura auto-save se storage estiver disponível
+    if (window.MyONGStorage) {
+      window.MyONGStorage.FormDraft.setupAutoSave(form);
+      
+      // Tenta restaurar rascunho
+      const formId = form.id;
+      if (formId) {
+        const draft = window.MyONGStorage.FormDraft.getDraft(formId);
+        if (draft) {
+          // Mostra aviso de rascunho disponível
+          setTimeout(() => {
+            if (confirm('Você tem um rascunho salvo. Deseja restaurá-lo?')) {
+              window.MyONGStorage.FormDraft.restoreDraft(form);
+            } else {
+              window.MyONGStorage.FormDraft.removeDraft(formId);
+            }
+          }, 500);
+        }
+      }
+    }
   });
 
   // ===== CEP AUTOCOMPLETE (Integration with ViaCEP API) =====

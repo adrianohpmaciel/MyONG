@@ -143,6 +143,18 @@
   const categorySelect = document.getElementById('category');
   const locationSelect = document.getElementById('location');
 
+  // Restaura filtros salvos
+  if (searchInput && categorySelect && locationSelect && window.MyONGStorage) {
+    setTimeout(() => {
+      window.MyONGStorage.Filters.applyFilters();
+      // Aplica filtros automaticamente se houver valores salvos
+      const savedFilters = window.MyONGStorage.Filters.getFilters();
+      if (savedFilters.search || savedFilters.category || savedFilters.location) {
+        filterProjects();
+      }
+    }, 100);
+  }
+
   if (filterBtn) {
     filterBtn.addEventListener('click', function() {
       filterProjects();
@@ -162,6 +174,15 @@
     const searchTerm = searchInput ? searchInput.value.toLowerCase() : '';
     const categoryValue = categorySelect ? categorySelect.value : '';
     const locationValue = locationSelect ? locationSelect.value : '';
+    
+    // Salva filtros no localStorage
+    if (window.MyONGStorage) {
+      window.MyONGStorage.Filters.saveFilters({
+        search: searchTerm,
+        category: categoryValue,
+        location: locationValue
+      });
+    }
     
     const projectCards = document.querySelectorAll('.project-card');
     

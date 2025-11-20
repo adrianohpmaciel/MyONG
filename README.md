@@ -17,6 +17,8 @@ Plataforma web completa desenvolvida para ONGs gerenciarem suas atividades, divu
 - **Gestão de Projetos** - Divulgação de 6 projetos sociais com sistema de filtros
 - **Portal de Voluntários** - Cadastro dual (Voluntário/ONG) com validações completas
 - **Sistema de Doações** - Barras de progresso e metas de arrecadação
+- **Single Page Application (SPA)** - Navegação sem reload de página com History API
+- **Armazenamento Local** - Auto-save de formulários, cache de filtros e preferências
 - **Design Responsivo** - Mobile-first com breakpoints otimizados
 - **100% Offline** - SVGs inline, sem dependências externas de imagens
 - **Acessibilidade** - ARIA labels, navegação por teclado, contraste adequado
@@ -26,6 +28,8 @@ Plataforma web completa desenvolvida para ONGs gerenciarem suas atividades, divu
 - **HTML5 Semântico** - Estrutura acessível e bem organizada
 - **CSS3 Avançado** - Grid, Flexbox, CSS Variables, Gradientes
 - **JavaScript Vanilla** - Sem dependências externas
+- **SPA Router** - Sistema de roteamento com hash navigation
+- **LocalStorage API** - Persistência de dados no navegador
 - **Assets Híbridos** - Logo PNG + Ícones SVG inline
 - **Design System Customizado** - Paleta de cores e componentes reutilizáveis
 - **Validações HTML5 + JavaScript** - Formulários com feedback em tempo real
@@ -43,9 +47,11 @@ myong/
 │   ├── style.css
 │   └── responsive.css
 ├── js/                 # Interatividade e validações
-│   ├── main.js
-│   ├── form-validation.js
-│   └── masks.js
+│   ├── storage.js      # Gerenciamento de localStorage
+│   ├── app.js          # Sistema SPA e roteamento
+│   ├── main.js         # Funcionalidades gerais
+│   ├── form-validation.js  # Validações de formulários
+│   └── masks.js        # Máscaras de input
 ├── images/             # Assets visuais
 │   ├── logo.png        # Logo oficial PNG
 │   └── icons/          # Ícones adicionais
@@ -104,10 +110,21 @@ cd MyONG
 ### JavaScript Modular
 ```
 js/
+├── storage.js           # LocalStorage API - persistência de dados
+├── app.js               # SPA Router - navegação sem reload
 ├── main.js              # Menu mobile, scroll suave, animações
 ├── form-validation.js   # Validações complexas de CPF/CNPJ
 └── masks.js             # Máscaras automáticas de input
 ```
+
+### Funcionalidades de Armazenamento Local
+- **Auto-save de Formulários** - Salvamento automático a cada 1 segundo
+- **Recuperação de Rascunhos** - Restaura dados ao recarregar a página
+- **Cache de Filtros** - Memoriza preferências de busca de projetos
+- **Histórico de Navegação** - Rastreia páginas visitadas
+- **Projetos Favoritos** - Sistema de favoritos persistente
+- **Preferências do Usuário** - Configurações personalizadas
+- **Rastreamento de Visitas** - Registra última visita e dias desde então
 
 ### CSS Organizado
 ```
@@ -161,12 +178,14 @@ Abordagem híbrida otimizada:
 
 ## 📊 Métricas do Projeto
 
-- **3 páginas HTML** completas e semânticas
+- **1 arquivo HTML** (SPA - Single Page Application)
 - **928 linhas** de CSS otimizado
+- **1.248 linhas** de JavaScript modular (5 arquivos)
 - **6 projetos sociais** demonstrativos
 - **0 dependências** externas
 - **100% offline** após primeiro carregamento
 - **Mobile-first** com 4 breakpoints responsivos
+- **LocalStorage** integrado para persistência de dados
 
 ## 🤖 Metodologia de Desenvolvimento
 
