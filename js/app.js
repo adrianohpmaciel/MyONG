@@ -122,6 +122,11 @@
             if (!path || path === '') {
                 path = 'home';
             }
+            
+            // Adiciona ao histórico de navegação
+            if (window.MyONGStorage) {
+                window.MyONGStorage.Navigation.addToHistory(path);
+            }
 
             // Obtém a seção correspondente à rota
             const sectionId = this.routes[path];
