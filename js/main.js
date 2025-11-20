@@ -31,13 +31,26 @@
       }
     });
 
-    // Close menu when clicking nav links
-    const navLinks = nav.querySelectorAll('.nav-link');
+    // Close menu when clicking nav links (except dropdown toggles)
+    const navLinks = nav.querySelectorAll('.nav-link:not(.dropdown-toggle)');
     navLinks.forEach(link => {
       link.addEventListener('click', function() {
         nav.classList.remove('active');
         mobileMenuToggle.setAttribute('aria-expanded', 'false');
         body.style.overflow = '';
+      });
+    });
+
+    // Handle dropdown toggle in mobile
+    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+    dropdownToggles.forEach(toggle => {
+      toggle.addEventListener('click', function(e) {
+        // Only toggle dropdown on mobile
+        if (window.innerWidth <= 1023) {
+          e.preventDefault();
+          const parentItem = this.closest('.nav-item.has-dropdown');
+          parentItem.classList.toggle('active');
+        }
       });
     });
 
@@ -263,6 +276,98 @@
     
     animateElements.forEach(element => animateObserver.observe(element));
   }
+
+  // ===== ALERT CLOSE FUNCTIONALITY =====
+  const alertCloseButtons = document.querySelectorAll('.alert-close');
+  
+  alertCloseButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const alert = this.closest('.alert');
+      if (alert) {
+        alert.style.transition = 'all 0.3s ease';
+        alert.style.opacity = '0';
+        alert.style.transform = 'translateX(20px)';
+        setTimeout(() => {
+          alert.remove();
+        }, 300);
+      }
+    });
+  });
+
+  // ===== TOAST NOTIFICATION SYSTEM =====
+  window.showToast = function(title, message, type = 'info') {
+    const toastContainer = document.getElementById('toastContainer');
+    if (!toastContainer) return;
+
+    const icons = {
+      success: '✓',
+      error: '✕',
+      warning: '⚠',
+      info: 'ℹ'
+    };
+
+    const toast = document.createElement('div');
+    toast.className = `toast toast-${type}`;
+    toast.innerHTML = `
+      <div class="toast-icon">${icons[type] || icons.info}</div>
+      <div class="toast-content">
+        <div class="toast-title">${title}</div>
+        <div class="toast-message">${message}</div>
+      </div>
+      <button class="toast-close">×</button>
+    `;
+
+    toastContainer.appendChild(toast);
+
+    // Close button functionality
+    const closeBtn = toast.querySelector('.toast-close');
+    closeBtn.addEventListener('click', () => {
+      toast.style.animation = 'slideOutRight 0.3s ease-out';
+      setTimeout(() => toast.remove(), 300);
+    });
+
+    // Auto remove after 5 seconds
+    setTimeout(() => {
+      if (toast.parentElement) {
+        toast.style.animation = 'slideOutRight 0.3s ease-out';
+        setTimeout(() => toast.remove(), 300);
+      }
+    }, 5000);
+  };
+
+  // Add slideOutRight animation
+  const style = document.createElement('style');
+  style.textContent = `
+    @keyframes slideOutRight {
+      from {
+        transform: translateX(0);
+        opacity: 1;
+      }
+      to {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+    }
+  `;
+  document.head.appendChild(style);
+
+  // ===== TAG CLOSE FUNCTIONALITY =====
+  const tagCloseButtons = document.querySelectorAll('.tag-close');
+  
+  tagCloseButtons.forEach(button => {
+    button.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const tag = this.closest('.tag');
+      if (tag) {
+        tag.style.transition = 'all 0.3s ease';
+        tag.style.opacity = '0';
+        tag.style.transform = 'scale(0.8)';
+        setTimeout(() => {
+          tag.remove();
+        }, 300);
+      }
+    });
+  });
 
   // ===== CONSOLE MESSAGE =====
   console.log('%cMyONG Platform', 'color: #2E8B57; font-size: 24px; font-weight: bold;');
