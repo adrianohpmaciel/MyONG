@@ -40,7 +40,7 @@
             <div class="header-content">
                 <!-- Logo -->
                 <div class="logo">
-                    <a href="index.html">
+                    <a href="#/">
                         <img src="./images/logo.png" alt="Logo MyONG" width="50" height="50">
                         <span class="logo-text">MyONG</span>
                     </a>
@@ -49,8 +49,8 @@
                 <!-- Navigation - Menu Principal -->
                 <nav class="nav" role="navigation" aria-label="Menu principal">
                     <ul class="nav-list">
-                        <li class="nav-item"><a href="index.html" class="nav-link active">Início</a></li>
-                        <li class="nav-item"><a href="projetos.html" class="nav-link">Projetos</a></li>
+                        <li class="nav-item"><a href="#/" class="nav-link">Início</a></li>
+                        <li class="nav-item"><a href="#/projetos" class="nav-link">Projetos</a></li>
                         <li class="nav-item has-dropdown">
                             <a href="#sobre" class="nav-link dropdown-toggle"><span>Sobre</span></a>
                             <ul class="dropdown-menu">
@@ -63,7 +63,7 @@
                         </li>
                         <li class="nav-item"><a href="#contato" class="nav-link">Contato</a></li>
                     </ul>
-                    <a href="cadastro.html" class="btn btn-primary">Cadastre-se</a>
+                    <a href="#/cadastro" class="btn btn-primary">Cadastre-se</a>
                 </nav>
                 
                 <!-- Mobile Menu Toggle -->
@@ -74,8 +74,8 @@
         </div>
     </header>
 
-    <!-- Main Content - Conteúdo Principal -->
-    <main class="main">
+    <!-- SEÇÃO HOME -->
+    <main id="home" class="main">
         <!-- Hero Section - Seção de Destaque -->
         <section class="hero" aria-label="Seção de destaque">
             <div class="hero-overlay"></div>
@@ -84,8 +84,8 @@
                     <h1 class="hero-title">Transforme Vidas Através da Solidariedade</h1>
                     <p class="hero-subtitle">Conectamos ONGs com pessoas dispostas a fazer a diferença no mundo</p>
                     <div class="hero-actions">
-                        <a href="cadastro.html" class="btn btn-primary btn-large">Quero Ajudar</a>
-                        <a href="projetos.html" class="btn btn-secondary btn-large">Conhecer Projetos</a>
+                        <a href="#/cadastro" class="btn btn-primary btn-large">Quero Ajudar</a>
+                        <a href="#/projetos" class="btn btn-secondary btn-large">Conhecer Projetos</a>
                     </div>
                 </div>
             </div>
@@ -292,6 +292,629 @@
         </section>
     </main>
 
+    <!-- SEÇÃO PROJETOS -->
+    <main id="projetos" class="main" style="display: none;">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">Projetos Sociais</h1>
+                <p class="page-subtitle">Descubra projetos que estão transformando vidas e fazendo a diferença</p>
+            </div>
+        </section>
+
+        <!-- Filters Section - Filtros de Busca -->
+        <section class="filters" aria-label="Filtros de busca">
+            <div class="container">
+                <div class="filter-bar">
+                    <div class="filter-group">
+                        <label for="search" class="filter-label">Buscar:</label>
+                        <input type="search" id="search" class="filter-input" placeholder="Nome do projeto ou ONG">
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="category" class="filter-label">Categoria:</label>
+                        <select id="category" class="filter-select">
+                            <option value="">Todas as categorias</option>
+                            <option value="educacao">Educação</option>
+                            <option value="saude">Saúde</option>
+                            <option value="meio-ambiente">Meio Ambiente</option>
+                            <option value="direitos-humanos">Direitos Humanos</option>
+                            <option value="cultura">Cultura</option>
+                            <option value="animais">Proteção Animal</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="location" class="filter-label">Localização:</label>
+                        <select id="location" class="filter-select">
+                            <option value="">Todas as localizações</option>
+                            <option value="sp">São Paulo</option>
+                            <option value="rj">Rio de Janeiro</option>
+                            <option value="mg">Minas Gerais</option>
+                            <option value="rs">Rio Grande do Sul</option>
+                            <option value="ba">Bahia</option>
+                        </select>
+                    </div>
+                    
+                    <button type="button" class="btn btn-primary" id="filterBtn">Filtrar</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section - Lista de Projetos -->
+        <section class="projects" aria-label="Lista de projetos">
+            <div class="container">
+                <div class="projects-grid" id="projectsGrid">
+                    <!-- Project Card 1 -->
+                    <article class="project-card">
+                        <div class="project-image">
+                            <svg width="100%" height="300" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="100%" height="100%" fill="#2196F3"/>
+                                <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="32" font-weight="bold" font-family="Arial, sans-serif">Educação</text>
+                            </svg>
+                            <span class="project-badge">Educação</span>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Educação para Todos</h3>
+                            <p class="project-ong">ONG Educar é Transformar</p>
+                            <p class="project-location">São Paulo, SP</p>
+                            <p class="project-description">Programa de reforço escolar e alfabetização para crianças em situação de vulnerabilidade social.</p>
+                            
+                            <div class="tags-container" style="margin-bottom: var(--spacing-md);">
+                                <span class="tag tag-category-education">Educação</span>
+                                <span class="tag">Presencial</span>
+                                <span class="tag">Crianças</span>
+                            </div>
+                            
+                            <div class="project-progress">
+                                <div class="progress-info">
+                                    <span>Meta: R$ 50.000</span>
+                                    <span>75% atingido</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="project-actions">
+                                <button class="btn btn-primary">Doar</button>
+                                <button class="btn btn-secondary">Ser Voluntário</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project Card 2 -->
+                    <article class="project-card">
+                        <div class="project-image">
+                            <svg width="100%" height="300" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="100%" height="100%" fill="#4CAF50"/>
+                                <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="32" font-weight="bold" font-family="Arial, sans-serif">Meio Ambiente</text>
+                            </svg>
+                            <span class="project-badge">Meio Ambiente</span>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Reflorestamento Urbano</h3>
+                            <p class="project-ong">Instituto Verde Vida</p>
+                            <p class="project-location">Rio de Janeiro, RJ</p>
+                            <p class="project-description">Plantio de árvores nativas em áreas urbanas degradadas para recuperação ambiental.</p>
+                            
+                            <div class="tags-container" style="margin-bottom: var(--spacing-md);">
+                                <span class="tag tag-category-environment">Meio Ambiente</span>
+                                <span class="tag">Presencial</span>
+                                <span class="tag">Fim de Semana</span>
+                            </div>
+                            
+                            <div class="project-progress">
+                                <div class="progress-info">
+                                    <span>Meta: R$ 30.000</span>
+                                    <span>45% atingido</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 45%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="project-actions">
+                                <button class="btn btn-primary">Doar</button>
+                                <button class="btn btn-secondary">Ser Voluntário</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project Card 3 -->
+                    <article class="project-card">
+                        <div class="project-image">
+                            <svg width="100%" height="300" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="100%" height="100%" fill="#F44336"/>
+                                <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="32" font-weight="bold" font-family="Arial, sans-serif">Saúde</text>
+                            </svg>
+                            <span class="project-badge">Saúde</span>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Saúde na Comunidade</h3>
+                            <p class="project-ong">Associação Vida Saudável</p>
+                            <p class="project-location">Belo Horizonte, MG</p>
+                            <p class="project-description">Atendimento médico e odontológico gratuito para comunidades carentes.</p>
+                            
+                            <div class="tags-container" style="margin-bottom: var(--spacing-md);">
+                                <span class="tag tag-category-health">Saúde</span>
+                                <span class="tag">Presencial</span>
+                                <span class="tag">Profissionais</span>
+                            </div>
+                            
+                            <div class="project-progress">
+                                <div class="progress-info">
+                                    <span>Meta: R$ 80.000</span>
+                                    <span>60% atingido</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 60%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="project-actions">
+                                <button class="btn btn-primary">Doar</button>
+                                <button class="btn btn-secondary">Ser Voluntário</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project Card 4 -->
+                    <article class="project-card">
+                        <div class="project-image">
+                            <svg width="100%" height="300" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="100%" height="100%" fill="#FF9800"/>
+                                <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="28" font-weight="bold" font-family="Arial, sans-serif">Proteção Animal</text>
+                            </svg>
+                            <span class="project-badge">Proteção Animal</span>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Resgate Animal</h3>
+                            <p class="project-ong">ONG Patinhas Solidárias</p>
+                            <p class="project-location">Porto Alegre, RS</p>
+                            <p class="project-description">Resgate, tratamento e adoção responsável de animais em situação de abandono.</p>
+                            
+                            <div class="tags-container" style="margin-bottom: var(--spacing-md);">
+                                <span class="tag">Animais</span>
+                                <span class="tag">Presencial</span>
+                                <span class="tag">Flexível</span>
+                            </div>
+                            
+                            <div class="project-progress">
+                                <div class="progress-info">
+                                    <span>Meta: R$ 25.000</span>
+                                    <span>90% atingido</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="project-actions">
+                                <button class="btn btn-primary">Doar</button>
+                                <button class="btn btn-secondary">Ser Voluntário</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project Card 5 -->
+                    <article class="project-card">
+                        <div class="project-image">
+                            <svg width="100%" height="300" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="100%" height="100%" fill="#9C27B0"/>
+                                <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="32" font-weight="bold" font-family="Arial, sans-serif">Cultura</text>
+                            </svg>
+                            <span class="project-badge">Cultura</span>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Arte e Cultura para Jovens</h3>
+                            <p class="project-ong">Centro Cultural Esperança</p>
+                            <p class="project-location">Salvador, BA</p>
+                            <p class="project-description">Oficinas de música, teatro e artes plásticas para jovens da periferia.</p>
+                            
+                            <div class="tags-container" style="margin-bottom: var(--spacing-md);">
+                                <span class="tag">Cultura</span>
+                                <span class="tag">Jovens</span>
+                                <span class="tag">Oficinas</span>
+                            </div>
+                            
+                            <div class="project-progress">
+                                <div class="progress-info">
+                                    <span>Meta: R$ 40.000</span>
+                                    <span>35% atingido</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 35%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="project-actions">
+                                <button class="btn btn-primary">Doar</button>
+                                <button class="btn btn-secondary">Ser Voluntário</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project Card 6 -->
+                    <article class="project-card">
+                        <div class="project-image">
+                            <svg width="100%" height="300" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="100%" height="100%" fill="#E91E63"/>
+                                <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="28" font-weight="bold" font-family="Arial, sans-serif">Direitos Humanos</text>
+                            </svg>
+                            <span class="project-badge">Direitos Humanos</span>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Direitos das Mulheres</h3>
+                            <p class="project-ong">Instituto Mulheres em Ação</p>
+                            <p class="project-location">São Paulo, SP</p>
+                            <p class="project-description">Apoio jurídico e psicológico para mulheres vítimas de violência doméstica.</p>
+                            
+                            <div class="tags-container" style="margin-bottom: var(--spacing-md);">
+                                <span class="tag">Direitos Humanos</span>
+                                <span class="tag">Mulheres</span>
+                                <span class="tag">Apoio</span>
+                            </div>
+                            
+                            <div class="project-progress">
+                                <div class="progress-info">
+                                    <span>Meta: R$ 60.000</span>
+                                    <span>55% atingido</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 55%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="project-actions">
+                                <button class="btn btn-primary">Doar</button>
+                                <button class="btn btn-secondary">Ser Voluntário</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    <button class="pagination-btn" disabled>Anterior</button>
+                    <span class="pagination-info">Página 1 de 3</span>
+                    <button class="pagination-btn">Próxima</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta">
+            <div class="container">
+                <h2 class="cta-title">Sua ONG também pode estar aqui!</h2>
+                <p class="cta-text">Cadastre sua organização e alcance milhares de potenciais voluntários e doadores</p>
+                <a href="#/cadastro" class="btn btn-primary btn-large">Cadastrar ONG</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- SEÇÃO CADASTRO -->
+    <main id="cadastro" class="main" style="display: none;">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">Cadastro</h1>
+                <p class="page-subtitle">Junte-se a nós e faça parte da transformação social</p>
+            </div>
+        </section>
+
+        <!-- Registration Section - Seção de Cadastro -->
+        <section class="registration" aria-label="Formulário de cadastro">
+            <div class="container">
+                <!-- Registration Type Selector -->
+                <div class="registration-selector">
+                    <button class="selector-btn active" data-type="volunteer">
+                        <span class="selector-icon">👤</span>
+                        <span class="selector-text">Sou Voluntário</span>
+                    </button>
+                    <button class="selector-btn" data-type="ong">
+                        <span class="selector-icon">🏢</span>
+                        <span class="selector-text">Represento uma ONG</span>
+                    </button>
+                </div>
+
+                <!-- Volunteer Registration Form -->
+                <form class="registration-form active" id="volunteerForm" data-form="volunteer" novalidate>
+                    <h2 class="form-title">Cadastro de Voluntário</h2>
+                    <p class="form-subtitle">Preencha seus dados para começar a ajudar</p>
+                    
+                    <!-- Personal Information -->
+                    <fieldset class="form-fieldset">
+                        <legend class="form-legend">Informações Pessoais</legend>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="vol-name" class="form-label">Nome Completo *</label>
+                                <input type="text" id="vol-name" name="name" class="form-input" required>
+                                <span class="form-error" id="vol-name-error"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="vol-cpf" class="form-label">CPF *</label>
+                                <input type="text" id="vol-cpf" name="cpf" class="form-input" maxlength="14" required>
+                                <span class="form-error" id="vol-cpf-error"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="vol-birth" class="form-label">Data de Nascimento *</label>
+                                <input type="date" id="vol-birth" name="birthDate" class="form-input" required>
+                                <span class="form-error" id="vol-birth-error"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="vol-phone" class="form-label">Telefone *</label>
+                                <input type="tel" id="vol-phone" name="phone" class="form-input" maxlength="15" required>
+                                <span class="form-error" id="vol-phone-error"></span>
+                            </div>
+                        </div>
+                    </fieldset>
+                    
+                    <!-- Contact Information -->
+                    <fieldset class="form-fieldset">
+                        <legend class="form-legend">Contato</legend>
+                        
+                        <div class="form-group">
+                            <label for="vol-email" class="form-label">E-mail *</label>
+                            <input type="email" id="vol-email" name="email" class="form-input" required>
+                            <span class="form-error" id="vol-email-error"></span>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="vol-password" class="form-label">Senha *</label>
+                                <input type="password" id="vol-password" name="password" class="form-input" minlength="8" required>
+                                <span class="form-error" id="vol-password-error"></span>
+                                <span class="form-hint">Mínimo de 8 caracteres</span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="vol-confirm-password" class="form-label">Confirmar Senha *</label>
+                                <input type="password" id="vol-confirm-password" name="confirmPassword" class="form-input" minlength="8" required>
+                                <span class="form-error" id="vol-confirm-password-error"></span>
+                            </div>
+                        </div>
+                    </fieldset>
+                    
+                    <!-- Interests -->
+                    <fieldset class="form-fieldset">
+                        <legend class="form-legend">Áreas de Interesse</legend>
+                        
+                        <div class="form-group">
+                            <div class="checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="interests" value="educacao">
+                                    <span>Educação</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="interests" value="saude">
+                                    <span>Saúde</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="interests" value="meio-ambiente">
+                                    <span>Meio Ambiente</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="interests" value="direitos-humanos">
+                                    <span>Direitos Humanos</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="interests" value="cultura">
+                                    <span>Cultura</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="interests" value="animais">
+                                    <span>Proteção Animal</span>
+                                </label>
+                            </div>
+                        </div>
+                    </fieldset>
+                    
+                    <!-- Terms -->
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="vol-terms" name="terms" required>
+                            <span>Aceito os <a href="#">Termos de Uso</a> e <a href="#">Política de Privacidade</a> *</span>
+                        </label>
+                        <span class="form-error" id="vol-terms-error"></span>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-large">Cadastrar como Voluntário</button>
+                </form>
+
+                <!-- ONG Registration Form -->
+                <form class="registration-form" id="ongForm" data-form="ong" novalidate>
+                    <h2 class="form-title">Cadastro de ONG</h2>
+                    <p class="form-subtitle">Registre sua organização e alcance mais pessoas</p>
+                    
+                    <!-- Organization Information -->
+                    <fieldset class="form-fieldset">
+                        <legend class="form-legend">Dados da Organização</legend>
+                        
+                        <div class="form-group">
+                            <label for="ong-name" class="form-label">Nome da ONG *</label>
+                            <input type="text" id="ong-name" name="ongName" class="form-input" required>
+                            <span class="form-error" id="ong-name-error"></span>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="ong-cnpj" class="form-label">CNPJ *</label>
+                                <input type="text" id="ong-cnpj" name="cnpj" class="form-input" maxlength="18" required>
+                                <span class="form-error" id="ong-cnpj-error"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="ong-foundation" class="form-label">Ano de Fundação *</label>
+                                <input type="number" id="ong-foundation" name="foundationYear" class="form-input" min="1900" max="2025" required>
+                                <span class="form-error" id="ong-foundation-error"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="ong-category" class="form-label">Categoria Principal *</label>
+                            <select id="ong-category" name="category" class="form-select" required>
+                                <option value="">Selecione uma categoria</option>
+                                <option value="educacao">Educação</option>
+                                <option value="saude">Saúde</option>
+                                <option value="meio-ambiente">Meio Ambiente</option>
+                                <option value="direitos-humanos">Direitos Humanos</option>
+                                <option value="cultura">Cultura</option>
+                                <option value="animais">Proteção Animal</option>
+                            </select>
+                            <span class="form-error" id="ong-category-error"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="ong-description" class="form-label">Descrição da ONG *</label>
+                            <textarea id="ong-description" name="description" class="form-textarea" rows="4" required></textarea>
+                            <span class="form-error" id="ong-description-error"></span>
+                            <span class="form-hint">Conte um pouco sobre a missão e visão da sua organização</span>
+                        </div>
+                    </fieldset>
+                    
+                    <!-- Address -->
+                    <fieldset class="form-fieldset">
+                        <legend class="form-legend">Endereço</legend>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="ong-cep" class="form-label">CEP *</label>
+                                <input type="text" id="ong-cep" name="cep" class="form-input" maxlength="9" required>
+                                <span class="form-error" id="ong-cep-error"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="ong-state" class="form-label">Estado *</label>
+                                <select id="ong-state" name="state" class="form-select" required>
+                                    <option value="">Selecione</option>
+                                    <option value="AC">Acre</option>
+                                    <option value="AL">Alagoas</option>
+                                    <option value="AP">Amapá</option>
+                                    <option value="AM">Amazonas</option>
+                                    <option value="BA">Bahia</option>
+                                    <option value="CE">Ceará</option>
+                                    <option value="DF">Distrito Federal</option>
+                                    <option value="ES">Espírito Santo</option>
+                                    <option value="GO">Goiás</option>
+                                    <option value="MA">Maranhão</option>
+                                    <option value="MT">Mato Grosso</option>
+                                    <option value="MS">Mato Grosso do Sul</option>
+                                    <option value="MG">Minas Gerais</option>
+                                    <option value="PA">Pará</option>
+                                    <option value="PB">Paraíba</option>
+                                    <option value="PR">Paraná</option>
+                                    <option value="PE">Pernambuco</option>
+                                    <option value="PI">Piauí</option>
+                                    <option value="RJ">Rio de Janeiro</option>
+                                    <option value="RN">Rio Grande do Norte</option>
+                                    <option value="RS">Rio Grande do Sul</option>
+                                    <option value="RO">Rondônia</option>
+                                    <option value="RR">Roraima</option>
+                                    <option value="SC">Santa Catarina</option>
+                                    <option value="SP">São Paulo</option>
+                                    <option value="SE">Sergipe</option>
+                                    <option value="TO">Tocantins</option>
+                                </select>
+                                <span class="form-error" id="ong-state-error"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="ong-city" class="form-label">Cidade *</label>
+                                <input type="text" id="ong-city" name="city" class="form-input" required>
+                                <span class="form-error" id="ong-city-error"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="ong-neighborhood" class="form-label">Bairro *</label>
+                                <input type="text" id="ong-neighborhood" name="neighborhood" class="form-input" required>
+                                <span class="form-error" id="ong-neighborhood-error"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="ong-street" class="form-label">Endereço *</label>
+                            <input type="text" id="ong-street" name="street" class="form-input" required>
+                            <span class="form-error" id="ong-street-error"></span>
+                        </div>
+                    </fieldset>
+                    
+                    <!-- Responsible Person -->
+                    <fieldset class="form-fieldset">
+                        <legend class="form-legend">Responsável Legal</legend>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="ong-responsible-name" class="form-label">Nome Completo *</label>
+                                <input type="text" id="ong-responsible-name" name="responsibleName" class="form-input" required>
+                                <span class="form-error" id="ong-responsible-name-error"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="ong-responsible-cpf" class="form-label">CPF *</label>
+                                <input type="text" id="ong-responsible-cpf" name="responsibleCpf" class="form-input" maxlength="14" required>
+                                <span class="form-error" id="ong-responsible-cpf-error"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="ong-phone" class="form-label">Telefone *</label>
+                                <input type="tel" id="ong-phone" name="phone" class="form-input" maxlength="15" required>
+                                <span class="form-error" id="ong-phone-error"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="ong-email" class="form-label">E-mail *</label>
+                                <input type="email" id="ong-email" name="email" class="form-input" required>
+                                <span class="form-error" id="ong-email-error"></span>
+                            </div>
+                        </div>
+                    </fieldset>
+                    
+                    <!-- Access Credentials -->
+                    <fieldset class="form-fieldset">
+                        <legend class="form-legend">Credenciais de Acesso</legend>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="ong-password" class="form-label">Senha *</label>
+                                <input type="password" id="ong-password" name="password" class="form-input" minlength="8" required>
+                                <span class="form-error" id="ong-password-error"></span>
+                                <span class="form-hint">Mínimo de 8 caracteres</span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="ong-confirm-password" class="form-label">Confirmar Senha *</label>
+                                <input type="password" id="ong-confirm-password" name="confirmPassword" class="form-input" minlength="8" required>
+                                <span class="form-error" id="ong-confirm-password-error"></span>
+                            </div>
+                        </div>
+                    </fieldset>
+                    
+                    <!-- Terms -->
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="ong-terms" name="terms" required>
+                            <span>Aceito os <a href="#">Termos de Uso</a> e <a href="#">Política de Privacidade</a> *</span>
+                        </label>
+                        <span class="form-error" id="ong-terms-error"></span>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-large">Cadastrar ONG</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
     <!-- Modal Backdrop -->
     <div class="modal-backdrop" id="modalBackdrop" onclick="document.getElementById('exampleModal').classList.remove('active'); this.classList.remove('active');"></div>
 
@@ -342,9 +965,9 @@
                 <div class="footer-column">
                     <h3 class="footer-title">Links Rápidos</h3>
                     <ul class="footer-links">
-                        <li><a href="index.html">Início</a></li>
-                        <li><a href="projetos.html">Projetos</a></li>
-                        <li><a href="cadastro.html">Cadastre-se</a></li>
+                        <li><a href="#/">Início</a></li>
+                        <li><a href="#/projetos">Projetos</a></li>
+                        <li><a href="#/cadastro">Cadastre-se</a></li>
                         <li><a href="#sobre">Sobre</a></li>
                     </ul>
                 </div>
@@ -390,8 +1013,10 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
+    <!-- Scripts - app.js DEVE vir ANTES dos outros scripts -->
+    <script src="./js/app.js"></script>
     <script src="./js/main.js"></script>
     <script src="./js/form-validation.js"></script>
+    <script src="./js/masks.js"></script>
 </body>
 </html>
