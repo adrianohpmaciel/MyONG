@@ -51,7 +51,16 @@
                     <ul class="nav-list">
                         <li class="nav-item"><a href="index.html" class="nav-link active">Início</a></li>
                         <li class="nav-item"><a href="projetos.html" class="nav-link">Projetos</a></li>
-                        <li class="nav-item"><a href="#sobre" class="nav-link">Sobre</a></li>
+                        <li class="nav-item has-dropdown">
+                            <a href="#sobre" class="nav-link dropdown-toggle"><span>Sobre</span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#missao" class="dropdown-item">Nossa Missão</a></li>
+                                <li><a href="#equipe" class="dropdown-item">Equipe</a></li>
+                                <li><a href="#parceiros" class="dropdown-item">Parceiros</a></li>
+                                <li class="dropdown-divider"></li>
+                                <li><a href="#transparencia" class="dropdown-item">Transparência</a></li>
+                            </ul>
+                        </li>
                         <li class="nav-item"><a href="#contato" class="nav-link">Contato</a></li>
                     </ul>
                     <a href="cadastro.html" class="btn btn-primary">Cadastre-se</a>
@@ -190,7 +199,134 @@
                 </form>
             </div>
         </section>
+
+        <!-- Components Demo Section - Demonstração de Componentes -->
+        <section class="components-demo" aria-label="Demonstração de componentes">
+            <div class="container">
+                <h2 class="section-title">Componentes da Interface</h2>
+                <p class="section-subtitle">Sistema de badges, tags e alertas para categorização e feedback</p>
+                
+                <!-- Badges Examples -->
+                <div style="margin-bottom: var(--spacing-2xl);">
+                    <h3 style="margin-bottom: var(--spacing-md); font-size: var(--font-size-xl);">Badges de Status</h3>
+                    <div style="display: flex; gap: var(--spacing-md); flex-wrap: wrap;">
+                        <span class="badge badge-primary">Ativo</span>
+                        <span class="badge badge-secondary">Em Destaque</span>
+                        <span class="badge badge-success">Concluído</span>
+                        <span class="badge badge-warning">Aguardando</span>
+                        <span class="badge badge-error">Cancelado</span>
+                        <span class="badge badge-info">Informação</span>
+                        <span class="badge badge-outline">Rascunho</span>
+                    </div>
+                </div>
+
+                <!-- Tags System Examples -->
+                <div style="margin-bottom: var(--spacing-2xl);">
+                    <h3 style="margin-bottom: var(--spacing-md); font-size: var(--font-size-xl);">Sistema de Tags para Categorização</h3>
+                    <div class="tags-container">
+                        <span class="tag tag-category-education">Educação</span>
+                        <span class="tag tag-category-health">Saúde</span>
+                        <span class="tag tag-category-environment">Meio Ambiente</span>
+                        <span class="tag tag-category-social">Assistência Social</span>
+                        <span class="tag">Cultura</span>
+                        <span class="tag">Esporte</span>
+                        <span class="tag">Direitos Humanos</span>
+                        <span class="tag tag-removable">Animais <span class="tag-close">×</span></span>
+                    </div>
+                </div>
+
+                <!-- Alerts Examples -->
+                <div style="margin-bottom: var(--spacing-2xl);">
+                    <h3 style="margin-bottom: var(--spacing-md); font-size: var(--font-size-xl);">Alertas de Feedback</h3>
+                    
+                    <div class="alert alert-success">
+                        <div class="alert-icon">✓</div>
+                        <div class="alert-content">
+                            <div class="alert-title">Sucesso!</div>
+                            <div class="alert-message">Sua inscrição foi realizada com sucesso. Você receberá um e-mail de confirmação em breve.</div>
+                        </div>
+                        <button class="alert-close">×</button>
+                    </div>
+
+                    <div class="alert alert-info">
+                        <div class="alert-icon">ℹ</div>
+                        <div class="alert-content">
+                            <div class="alert-title">Informação</div>
+                            <div class="alert-message">Novos projetos estão disponíveis para voluntariado. Confira a página de projetos!</div>
+                        </div>
+                        <button class="alert-close">×</button>
+                    </div>
+
+                    <div class="alert alert-warning">
+                        <div class="alert-icon">⚠</div>
+                        <div class="alert-content">
+                            <div class="alert-title">Atenção</div>
+                            <div class="alert-message">Seu perfil está incompleto. Complete suas informações para receber recomendações personalizadas.</div>
+                        </div>
+                        <button class="alert-close">×</button>
+                    </div>
+
+                    <div class="alert alert-error">
+                        <div class="alert-icon">✕</div>
+                        <div class="alert-content">
+                            <div class="alert-title">Erro</div>
+                            <div class="alert-message">Não foi possível processar sua solicitação. Por favor, tente novamente mais tarde.</div>
+                        </div>
+                        <button class="alert-close">×</button>
+                    </div>
+                </div>
+
+                <!-- Modal Trigger Button -->
+                <div style="text-align: center; margin-bottom: var(--spacing-2xl);">
+                    <h3 style="margin-bottom: var(--spacing-md); font-size: var(--font-size-xl);">Modal e Toast de Exemplo</h3>
+                    <div style="display: flex; gap: var(--spacing-md); justify-content: center; flex-wrap: wrap;">
+                        <button class="btn btn-primary" onclick="document.getElementById('exampleModal').classList.add('active'); document.getElementById('modalBackdrop').classList.add('active');">
+                            Abrir Modal
+                        </button>
+                        <button class="btn btn-secondary" onclick="showToast('Sucesso!', 'Sua ação foi realizada com sucesso.', 'success');">
+                            Mostrar Toast
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
+
+    <!-- Modal Backdrop -->
+    <div class="modal-backdrop" id="modalBackdrop" onclick="document.getElementById('exampleModal').classList.remove('active'); this.classList.remove('active');"></div>
+
+    <!-- Example Modal -->
+    <div class="modal" id="exampleModal">
+        <div class="modal-header">
+            <h3 class="modal-title">Confirmar Participação</h3>
+            <button class="modal-close" onclick="document.getElementById('exampleModal').classList.remove('active'); document.getElementById('modalBackdrop').classList.remove('active');">×</button>
+        </div>
+        <div class="modal-body">
+            <p style="margin-bottom: var(--spacing-md);">Você está prestes a se inscrever como voluntário neste projeto. Confirme as informações abaixo:</p>
+            
+            <div style="background-color: var(--color-bg-secondary); padding: var(--spacing-lg); border-radius: var(--radius-md); margin-bottom: var(--spacing-lg);">
+                <p style="margin-bottom: var(--spacing-sm);"><strong>Projeto:</strong> Alfabetização de Adultos</p>
+                <p style="margin-bottom: var(--spacing-sm);"><strong>ONG:</strong> Instituto Educação para Todos</p>
+                <p style="margin-bottom: var(--spacing-sm);"><strong>Local:</strong> São Paulo - SP</p>
+                <p><strong>Data de Início:</strong> 01/12/2025</p>
+            </div>
+            
+            <div class="tags-container">
+                <span class="tag tag-category-education">Educação</span>
+                <span class="tag">Presencial</span>
+                <span class="tag">2x por semana</span>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-outline" onclick="document.getElementById('exampleModal').classList.remove('active'); document.getElementById('modalBackdrop').classList.remove('active');">Cancelar</button>
+            <button class="btn btn-primary">Confirmar Inscrição</button>
+        </div>
+    </div>
+
+    <!-- Toast Container (for notifications) -->
+    <div class="toast-container" id="toastContainer">
+        <!-- Toasts will be dynamically added here -->
+    </div>
 
     <!-- Footer - Rodapé -->
     <footer class="footer">
